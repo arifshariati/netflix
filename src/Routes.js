@@ -19,7 +19,7 @@ const Routes = () => {
 
         <Switch>
 
-            <Redirect exact from='/' to='/' />
+            <Redirect exact from='/' to='/homescreen' />
 
             <RouteWithLayout
                 component={HomeScreenView}
