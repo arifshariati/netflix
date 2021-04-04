@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -12,7 +12,7 @@ import InputIcon from "@material-ui/icons/Input";
 const useStyles = makeStyles((theme) => ({
     root: {
         boxShadow: "none",
-        backgroundColor: theme.palette.black
+        zIndex:1
     },
     flexGrow: {
         flexGrow: 1,
@@ -26,6 +26,18 @@ const Topbar = (props) => {
     const { onSidebarOpen } = props;
 
     const classes = useStyles();
+    const [show, handleShow] = useState(false);
+    const transitionNavBar = () => {
+        if(window.scrollY > 100) {
+            handleShow(true);
+        }else{
+            handleShow(false);
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', transitionNavBar);
+        return () => window.removeEventListener('scroll', transitionNavBar);
+    },[]);
 
     const handleSignout = (event) => {
 
@@ -37,7 +49,12 @@ const Topbar = (props) => {
     }
 
     return (
-        <AppBar className={classes.root}>
+        <AppBar 
+            className={classes.root} 
+            style={{
+                backgroundColor:`${show ? '#111' : 'transparent'}`
+            }}
+        >
             <Toolbar>
                 <RouterLink style={{ textDecoration:'none', color:'inherit' }} to="/">
                     <Typography variant="h1" color='primary'>Movies</Typography>

@@ -32,42 +32,44 @@ const Banner = () => {
             style={{ 
                 backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`, 
                 backgroundSize:'cover',
-                backgroundPosition:'center center'
+                backgroundPosition:'center'
             }}
         >
-            <div className={classes.banner__contents}>
-                <Typography 
-                    variant="h1" 
-                    style={{
-                        fontWeight:'bold', 
-                        paddingBottom:'1rem', 
-                        color:'white'
-                    }}
-                >
-                    {movie?.title || movie?.name || movie?.original_name}
-                </Typography>
-                <div className={classes.banner__buttons}>
-                    <Button 
-                        variant="contained" 
-                        color='primary' 
-                        className={classes.banner__buttons} 
-                        startIcon={<PlayCircleFilledWhiteIcon />}
+            <div className={classes.banner__contentsContainer}>
+                <div className={classes.banner__contents}>
+                    <Typography 
+                        variant="h1" 
+                        style={{
+                            fontWeight:'bold', 
+                            paddingBottom:'1rem', 
+                            color:'white'
+                        }}
                     >
-                            Play
-                    </Button>
-                    <Button 
-                        variant="contained" 
-                        className={classes.banner__buttons}
+                        {movie?.title || movie?.name || movie?.original_name}
+                    </Typography>
+                    <div className={classes.banner__buttons}>
+                        <Button 
+                            variant="contained" 
+                            color='primary' 
+                            className={classes.banner__buttons} 
+                            startIcon={<PlayCircleFilledWhiteIcon />}
+                        >
+                                Play
+                        </Button>
+                        <Button 
+                            variant="contained" 
+                            className={classes.banner__buttons}
+                        >
+                            My List
+                        </Button>
+                    </div>
+                    <Typography 
+                        variant="body1" 
+                        style={{color:'white'}}
                     >
-                        My List
-                    </Button>
+                        {truncate(movie?.overview,150)}
+                    </Typography>
                 </div>
-                <Typography 
-                    variant="body1" 
-                    style={{color:'white'}}
-                >
-                    {truncate(movie?.overview,150)}
-                </Typography>
             </div>
             <div className={classes.banner__fadeBottom} />
         </header>

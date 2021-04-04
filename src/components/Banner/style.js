@@ -3,14 +3,16 @@ const styles = makeStyles(() => ({
     banner: {
         position:'relative',
         height:'40rem',
-        color:'white',
         objectFit: 'contain',
-        backgorundColor:'#f1f1f1',
+        top:'-4rem'
+    },
+    banner__contentsContainer: {
+        height:'25rem',
     },
     banner__contents: {
         marginLeft: '2rem',
-        paddingTop:'15rem',
-        width: '50%'
+        width: '50%',
+        paddingTop:'25rem',
     },
     banner__buttons: {
         marginRight: '0.5rem',
@@ -18,7 +20,7 @@ const styles = makeStyles(() => ({
     },
     banner__fadeBottom: {
         height:'15rem',
-        background: 'linear-gradient(180deg, transparent 10%, rgba(37,37,37,0.61) 90%)'
+        background: 'linear-gradient(180deg, transparent 10%, rgba(37,37,37,0.70) 90%)'
     }
 }));
 
