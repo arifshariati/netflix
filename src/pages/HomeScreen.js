@@ -1,8 +1,9 @@
 import React from 'react'
+import { Banner } from '../components'
 const  HomeScreen = () => {
     return (
         <div>
-            <h1>Hi dude</h1>
+            <Banner />
         </div>
     )
 }
