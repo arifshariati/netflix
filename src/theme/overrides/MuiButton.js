@@ -7,7 +7,7 @@ const MuiButton = {
   },
   text: {
       borderRadius: '50rem',
-      padding:'0.5rem 1rem'
+      padding:'0.5rem 1rem',
   },
   outlined: {
       borderRadius: '50rem',

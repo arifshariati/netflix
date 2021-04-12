@@ -60,16 +60,19 @@ const Topbar = (props) => {
                     <Typography variant="h1" color='primary'>Movies</Typography>
                 </RouterLink>
                 <div className={classes.flexGrow} />
-                <Hidden mdDown>
+                <IconButton className={classes.signOutButton} onClick={handleSignout} color="primary">
+                    <InputIcon />
+                </IconButton>
+                {/* <Hidden mdDown>
                     <IconButton className={classes.signOutButton} onClick={handleSignout} color="primary">
                         <InputIcon />
                     </IconButton>
-                </Hidden>
-                <Hidden lgUp>
+                </Hidden> */}
+                {/* <Hidden lgUp>
                 <IconButton color="inherit" onClick={onSidebarOpen}>
                     <MenuIcon />
                 </IconButton>
-                </Hidden>
+                </Hidden> */}
             </Toolbar>
         </AppBar>
     );
