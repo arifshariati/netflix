@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Redirect } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 
 import { RouteWithLayout } from './components';
 
@@ -10,7 +10,8 @@ import {
 
 // page
 import {
-    HomeScreen as HomeScreenView
+    HomeScreen as HomeScreenView,
+    LoginScreen as LoginScreenView
 } from './pages';
 
 const Routes = () => {
@@ -26,6 +27,12 @@ const Routes = () => {
                 exact
                 layout={MainLayout}
                 path='/homescreen'
+            />
+
+            <Route 
+                component={LoginScreenView}
+                exact
+                path='/login'
             />
 
             <Redirect to="/not-found" />

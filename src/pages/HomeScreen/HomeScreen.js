@@ -1,6 +1,6 @@
 import React from 'react'
-import { Banner, Categories } from '../components';
-import endPoints from '../tmdbRequests';
+import { Banner, Categories } from '../../components';
+import endPoints from '../../tmdbRequests';
 import styles from './style';
 const  HomeScreen = () => {
     const classes = styles();
@@ -44,4 +44,4 @@ const  HomeScreen = () => {
     )
 }
 
-export default HomeScreen
+export default HomeScreen;
